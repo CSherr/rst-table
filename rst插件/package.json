@@ -1,0 +1,41 @@
+{
+  "name": "rst-table-editor",
+  "displayName": "RST Table Editor",
+  "description": "Visual editor for reStructuredText tables with Chinese and English character support",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:rstTableEditor.createTable"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "rstTableEditor.createTable",
+        "title": "Create RST Table",
+        "category": "RST Table"
+      }
+    ],
+    "menus": {
+      "command-palette": [
+        {
+          "command": "rstTableEditor.createTable",
+          "when": "editorLangId == restructuredtext"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "echo No compilation needed",
+    "watch": "echo No watcher needed"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.60.0"
+  }
+}

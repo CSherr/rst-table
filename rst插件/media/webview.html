@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RST Table Editor</title>
+    <link rel="stylesheet" href="{{CSS_URI}}">
+</head>
+<body>
+    <div class="container">
+        <h2>RST Table Editor</h2>
+        
+        <!-- 导入功能区域 -->
+        <div class="import-section">
+            <h3>Import RST Table</h3>
+            <textarea id="import-textarea" placeholder="Paste your RST table here...&#10;Example:&#10;+-------+-------+&#10;| Header1 | Header2 |&#10;+========+========+&#10;| Data1  | Data2  |&#10;+-------+-------+"></textarea>
+            <div class="import-actions">
+                <button id="import-btn">Import Table</button>
+                <button id="clear-import-btn">Clear</button>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <label for="rows">Rows:</label>
+            <input type="number" id="rows" value="3" min="1" max="50">
+            <label for="cols">Columns:</label>
+            <input type="number" id="cols" value="3" min="1" max="20">
+            <button id="update-table">Update Table</button>
+        </div>
+        
+        <div class="info">Note: First row is treated as table header</div>
+        <div class="warning" id="data-warning" style="display: none;">
+            Warning: Some data may be lost when reducing rows/columns
+        </div>
+        
+        <div id="table-container">
+            <!-- 表格将在这里动态生成 -->
+        </div>
+        
+        <h3>RST Preview:</h3>
+        <div id="preview" class="preview"></div>
+        
+        <div class="actions">
+            <button id="insert-btn">Insert into Editor</button>
+            <button id="copy-btn">Copy to Clipboard</button>
+            <button id="clear-btn">Clear All Data</button>
+        </div>
+    </div>
+
+    <script src="{{JS_URI}}"></script>
+</body>
+</html>
